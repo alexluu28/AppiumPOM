@@ -1,6 +1,7 @@
 package com.example.appiumproject.tests;
 
 import com.example.appiumproject.pages.ActivityPage;
+import com.example.appiumproject.pages.AlertsDialoguePage;
 import com.example.appiumproject.pages.AppPage;
 import com.example.appiumproject.pages.BaseTest;
 import com.example.appiumproject.pages.CustomTitlePage;
@@ -18,6 +19,7 @@ public class CustomTitleLeftTest extends BaseTest {
     AppPage appPage;
     ActivityPage activityPage;
     CustomTitlePage customTitlePage;
+    AlertsDialoguePage alertsDialoguePage;
 
 
     @BeforeMethod
@@ -27,6 +29,7 @@ public class CustomTitleLeftTest extends BaseTest {
         appPage = new AppPage();
         activityPage = new ActivityPage();
         customTitlePage = new CustomTitlePage();
+        alertsDialoguePage = new AlertsDialoguePage();
     }
 
     @Test
@@ -42,6 +45,16 @@ public class CustomTitleLeftTest extends BaseTest {
         System.out.println(actualLeftHeader);
         String expectedLeftHeader = "Hello My Dear";
         Assert.assertEquals(actualLeftHeader, expectedLeftHeader, "titles do not match");
+
+    }
+
+    @Test
+    public void handleAlertsTest(){
+        homePage.clickOnAppBtn();
+        appPage.clickOnAlertDialogsBtn();
+        alertsDialoguePage.clickOkCancelMsg();
+        alertsDialoguePage.clickOkAlertBtn();
+
 
     }
 }

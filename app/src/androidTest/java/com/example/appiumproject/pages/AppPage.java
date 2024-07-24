@@ -12,6 +12,9 @@ public class AppPage extends BasePage {
     @AndroidFindBy(xpath = "//android.widget.TextView[@content-desc='Activity']")
     public WebElement activityBtn;
 
+    @AndroidFindBy(xpath = "//android.widget.TextView[@content-desc='Alert Dialogs']")
+    public WebElement alertDialogsBtn;
+
     //page factory constructor
     public AppPage(){
         PageFactory.initElements(new AppiumFieldDecorator(getDriver()), this);
@@ -20,5 +23,9 @@ public class AppPage extends BasePage {
     //methods
     public void clickOnActivityBtn(){
         click(activityBtn);
+    }
+
+    public void clickOnAlertDialogsBtn(){
+        click(alertDialogsBtn);
     }
 }
